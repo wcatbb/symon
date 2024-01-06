@@ -37,7 +37,9 @@ def show_splash():
 
 def show_high_scores(high_scores):
     '''
-    leaderboard
+    leaderboard accepts a high_score and sorts the table
+    with a lambda function. It only accepts the top 8 scores
+    and is recast into the global high_scores dictionary 
     '''
     sorted_high_scores = sorted(high_scores.items(), key=lambda item: item[1], reverse=True)[:8]
     high_scores = dict(sorted_high_scores)

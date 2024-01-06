@@ -8,7 +8,8 @@ from symon_pkg.screens import show_splash, clear_screen, show_high_scores
 
 def new_game(USER, HIGH_SCORE, high_scores):
     '''
-    prompt user for name on first try; update user high score
+    prompts user for name on first try; stores symon and user sequences
+    in lists and updates score for every level advanced
     '''
     symon_seq = []
     user_seq = []
@@ -29,7 +30,7 @@ def new_game(USER, HIGH_SCORE, high_scores):
         symon_seq.append(new_arrow)
         print(f"-=LEVEL {level}=-")
         print(f"symon's turn:{symon_seq}")
-        display_time = (4 + level) / (level + 1)
+        display_time = (4 + level) / (level + 1) # shortens the amount of time user can see sequence the further they advance
         time.sleep(display_time)
         clear_screen()
 

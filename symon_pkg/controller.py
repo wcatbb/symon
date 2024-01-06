@@ -5,14 +5,20 @@ import random
 from symon_pkg.screens import clear_screen
 
 def symon_turn():
+    '''
+    returns random arrow direction from list
+    '''
     arrow_keys = ["UP", "DOWN", "LEFT", "RIGHT"]
     return random.choice(arrow_keys)
 
 def user_turn():
-    # Init user_seq
+    '''
+    user sequence stores a list of key inputs which is returned
+    when the input loop is exited  
+    '''
     user_seq = []
     print("")
-    # Get arrow key input
+    # get arrow key input
     while True:
         key = input()
         if key == "w":
@@ -29,6 +35,5 @@ def user_turn():
             user_seq.append("RIGHT")
         elif key == "":
             clear_screen()
-            break  # Exit the loop when the user submits the sequence
-
+            break  # exit the loop when the user hits return
     return user_seq
